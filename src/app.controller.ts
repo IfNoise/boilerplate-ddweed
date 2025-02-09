@@ -12,9 +12,8 @@ export class AppController {
 
   @Get()
   getHello(@Request() req): string {
-    const authHeader = req.headers.bearer;
-    if (authHeader) {
-      const token = authHeader.split(' ')[1];
+    const token = req.headers.bearer;
+    if (token) {
       const decodedToken = this.tokenService.decodeToken(token);
       this.logger.log(decodedToken);
       const userId = decodedToken['sub'];

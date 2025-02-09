@@ -2,7 +2,7 @@ import { Controller, Get, Logger, Request } from '@nestjs/common';
 import { AppService } from './app.service';
 import { TokenService } from './auth/token.service';
 
-@Controller()
+@Controller('test')
 export class AppController {
   private readonly logger = new Logger('AppController');
   constructor(
